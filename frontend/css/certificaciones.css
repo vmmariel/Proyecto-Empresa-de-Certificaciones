@@ -1,0 +1,16 @@
+/* + certificaciones */
+section.servicios {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f5f5f5;
+}
+
+section.servicios .subtituloSer {
+  text-align: center;
+  color: #737373;
+  margin-top: 0;
+}

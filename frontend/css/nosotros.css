@@ -1,0 +1,58 @@
+
+/* + nosotros */
+section.nosotros {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 6rem;
+}
+
+section.nosotros .subtituloNos {
+  text-align: center;
+  color: #737373;
+}
+
+section.nosotros .infoNosotros {
+  display: flex;
+  gap: 4rem;
+  margin-top: 4rem;
+  justify-content: space-around;
+  align-items: center;
+  width: 70%;
+}
+
+section.nosotros .infoNosotros .img img {
+  width: 500px;
+  border-radius: 1rem;
+  box-shadow: 0rem 0.5rem 1.5rem #17171760;
+}
+
+section.nosotros .infoNosotros p {
+  color: #737373;
+  margin-top: 1rem;
+  line-height: 1.5;
+}
+
+section.nosotros .valoresNosotros {
+  display: flex;
+  gap: 2rem;
+  margin-top: 4rem;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+}
+
+section.nosotros .instructoresNosotros {
+  margin-top: 6rem;
+  text-align: center;
+}
+
+section.nosotros .instructoresNosotros .cartasInstructores {
+  display: flex;
+  gap: 2rem;
+  margin: 4rem auto;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+}

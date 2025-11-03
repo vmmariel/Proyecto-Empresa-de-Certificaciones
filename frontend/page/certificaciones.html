@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../img/icon.png">
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/certificaciones.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>LenCore</title>
+
+</head>
+
+<body class="bg-gradient">
+    <header>
+
+        <div class="header">
+            <div class="logo"><img src="../img/LenCoreLogo.png" alt=""></div>
+            <div class="navegacion">
+                <ul>
+                    <li><a href="./index.html">Inicio</a></li>
+                    <li><a href="./certificaciones.html">Certificaciones</a></li>
+                    <li><a href="./nosotros.html">Nosotros</a></li>
+                    <li><a href="./contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="usuarioInfo">
+                <a id="botonIniciar" href="./iniciarSesion.html" class="boton">Iniciar Sesión</a>
+                <div id="informacionUser" class="informacionUsuario">
+                    <div class="usuario"><span id="nombreUsuarioL"></span> <i class="fa-solid fa-user"></i></div>
+                    <button id="botonCerrar" class="boton"> <i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <section>
+        <section id="certificaciones" class="servicios contenedor">
+            <h1>Certificaciones</h1>
+            <p class="subtituloSer">Explora nuestras certificaciones, fija tus metas y llévalas a la práctica</p>
+
+            <div class="contenedorCartas">
+                <div class="carta">
+                    <div class="informacion">
+                        <div class="iconoCuadrado"><i class="fa-solid fa-code"></i></div>
+                        <span id="pagadoAlert" class="infonoti pagado">Pagado</span>
+                        <span id="disponibleAlert" class="infonoti disponible">Disponible</span>
+                    </div>
+                    <p class="subtituloCar">Certificación en C#</p>
+                    <p>Domina la programación en C# aplicando conceptos de programación <br> orientada a objetos.</p>
+
+                    <div class="ventajas">
+                        <p>Ventajas de la certificación:</p>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> Valida tus habilidades en C#</li>
+                            <li><i class="fa-solid fa-check"></i> Mejora tus oportunidades laborales en proyectos
+                                empresariales</li>
+                            <li><i class="fa-solid fa-check"></i> Acceso a comunidad exclusiva de programadores
+                                certificados</li>
+                        </ul>
+                    </div>
+                    <div class="detalles">
+                        <div class="detalleItem">
+                            <p>Puntuación mínima:</p>
+                            <span>70%</span>
+                        </div>
+                        <div class="detalleItem">
+                            <p>Tiempo del examen:</p>
+                            <span>25 minutos</span>
+                        </div>
+                        <div class="spaciador"></div>
+                        <div class="detalleItem precio">
+                            <p>Costo:</p>
+                            <span>$149.99</span>
+                        </div>
+                    </div>
+                    <div class="botonesCarta">
+                        <button id="pagoBoton" class="boton">Realizar pago</button>
+                        <button id="iniciarExamen" class="botonBlanco">Iniciar Examen</button>
+                    </div>
+                </div>
+                <div class="carta">
+                    <div class="informacion">
+                        <div class="iconoCuadrado"><i class="fa-brands fa-java"></i></div><span
+                            class="infonoti proximamente">Disponible el 20-12-2025</span>
+                    </div>
+                    <p class="subtituloCar">Certificación en Java</p>
+                    <p>Aprende Java desde lo básico hasta avanzado, incluyendo programación orientada a objetos, manejo
+                        de bases de datos y desarrollo de aplicaciones empresariales.</p>
+
+                    <div class="ventajas">
+                        <p>Ventajas de la certificación:</p>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> Certifica tus habilidades en Java y desarrollo de
+                                aplicaciones robustas</li>
+                            <li><i class="fa-solid fa-check"></i> Aumenta tu empleabilidad en empresas que usan Java
+                            </li>
+                            <li><i class="fa-solid fa-check"></i> Acceso a comunidad exclusiva de desarrolladores
+                                certificados</li>
+                        </ul>
+                    </div>
+                    <div class="detalles">
+                        <div class="detalleItem">
+                            <p>Puntuación mínima:</p>
+                            <span>70%</span>
+                        </div>
+                        <div class="detalleItem">
+                            <p>Tiempo del examen:</p>
+                            <span>25 minutos</span>
+                        </div>
+                        <div class="spaciador"></div>
+                        <div class="detalleItem precio">
+                            <p>Costo:</p>
+                            <span>$149.99</span>
+                        </div>
+                    </div>
+                    <div class="botonesCarta deshabilitado">
+                        <button class="boton">Realizar pago</button>
+                        <button class="botonBlanco">Iniciar Examen</button>
+                    </div>
+                </div>
+                <div class="carta">
+                    <div class="informacion">
+                        <div class="iconoCuadrado"><i class="fa-brands fa-js"></i></div><span
+                            class="infonoti proximamente">Disponible el 10-11-2025</span>
+                    </div>
+                    <p class="subtituloCar">Certificación en JavaScript</p>
+                    <p>Domina JavaScript y frameworks modernos, desarrollo front-end y back-end, manipulación del DOM y
+                        buenas prácticas de programación.</p>
+
+                    <div class="ventajas">
+                        <p>Ventajas de la certificación:</p>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> Valida tus habilidades en desarrollo web con
+                                JavaScript</li>
+                            <li><i class="fa-solid fa-check"></i> Incrementa tus oportunidades en proyectos front-end y
+                                full stack
+                            </li>
+                            <li><i class="fa-solid fa-check"></i> Acceso a comunidad exclusiva de desarrolladores
+                                certificados</li>
+                        </ul>
+                    </div>
+                    <div class="detalles">
+                        <div class="detalleItem">
+                            <p>Puntuación mínima:</p>
+                            <span>70%</span>
+                        </div>
+                        <div class="detalleItem">
+                            <p>Tiempo del examen:</p>
+                            <span>25 minutos</span>
+                        </div>
+                        <div class="spaciador"></div>
+                        <div class="detalleItem precio">
+                            <p>Costo:</p>
+                            <span>$149.99</span>
+                        </div>
+                    </div>
+                    <div class="botonesCarta deshabilitado">
+                        <button class="boton">Realizar pago</button>
+                        <button class="botonBlanco">Iniciar Examen</button>
+                    </div>
+                </div>
+                <div class="carta">
+                    <div class="informacion">
+                        <div class="iconoCuadrado"><i class="fa-brands fa-python"></i></div><span
+                            class="infonoti proximamente">Disponible el 01-12-2025</span>
+                    </div>
+                    <p class="subtituloCar">Certificación en Python</p>
+                    <p>Aprende Python para desarrollo web, análisis de datos, automatización y programación orientada a
+                        objetos, con buenas prácticas y librerías populares.</p>
+
+                    <div class="ventajas">
+                        <p>Ventajas de la certificación:</p>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> Certifica tus habilidades en Python y desarrollo de
+                                aplicaciones</li>
+                            <li><i class="fa-solid fa-check"></i> Mejora tu perfil en áreas de desarrollo, ciencia de
+                                datos y automatización
+                            </li>
+                            <li><i class="fa-solid fa-check"></i> Acceso a comunidad exclusiva de programadores
+                                certificados</li>
+                        </ul>
+                    </div>
+                    <div class="detalles">
+                        <div class="detalleItem">
+                            <p>Puntuación mínima:</p>
+                            <span>70%</span>
+                        </div>
+                        <div class="detalleItem">
+                            <p>Tiempo del examen:</p>
+                            <span>25 minutos</span>
+                        </div>
+                        <div class="spaciador"></div>
+                        <div class="detalleItem precio">
+                            <p>Costo:</p>
+                            <span>$149.99</span>
+                        </div>
+                    </div>
+                    <div class="botonesCarta deshabilitado">
+                        <button class="boton">Realizar pago</button>
+                        <button class="botonBlanco">Iniciar Examen</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+    <footer>
+        <div class="infoFooter">
+            <div>
+                <h5>Acerca de LenCore</h5>
+                <p>Especializados en formación y certificación de Java, JavaScript, Python y C#, ayudamos a validar
+                    habilidades y potenciar carreras en la industria tecnológica.</p>
+            </div>
+            <div class="navegacionFooter">
+                <h5>Navegación</h5>
+                <ul>
+                    <li><a href="./index.html">Inicio</a></li>
+                    <li><a href="./certificaciones.html">Certificaciones</a></li>
+                    <li><a href="./nosotros.html">Nosotros</a></li>
+                    <li><a href="./contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>Contacto</h5>
+                <p>hola@lencore.com</p>
+            </div>
+            <div>
+                <h5>Redes Sociales</h5>
+                <div>
+                    <a href="https://www.instagram.com/lencore_certificaciones?utm_source=qr&igsh=ZW1tajd5bnR6MHlp" target="_blank"  class="iconRed"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="espaciador"></div>
+        <span class="derechos">© 2025 LenCore. Todos los derechos reservados.</span>
+    </footer>
+
+    <script src="../js/certificaciones.js"></script>
+</body>
+
+</html>

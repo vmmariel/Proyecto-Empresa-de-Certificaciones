@@ -1,0 +1,30 @@
+
+/* + contacto */
+section.contacto {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f5f5f5;
+}
+
+section.contacto .subCont {
+  text-align: center;
+  color: #737373;
+}
+
+section.contacto .formulario {
+  margin-top: 3rem;
+  width: 60%;
+  max-width: 800px;
+}
+
+section.contacto .formulario .botonEnviar {
+  display: flex;
+}
+
+section.contacto .formulario .botonEnviar button {
+  width: 100%;
+}

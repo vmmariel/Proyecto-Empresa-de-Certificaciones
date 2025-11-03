@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../img/icon.png">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/iniciarSesion.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <title>Iniciar sesión</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+
+<body class="bg-gradient">
+    <header>
+
+        <div class="header">
+            <div class="logo"><img src="../img/LenCoreLogo.png" alt=""></div>
+            <div class="navegacion">
+                <ul>
+                    <li><a href="./index.html">Inicio</a></li>
+                    <li><a href="./certificaciones.html">Certificaciones</a></li>
+                    <li><a href="./nosotros.html">Nosotros</a></li>
+                    <li><a href="./contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="usuarioInfo">
+                <a href="./index.html" class="boton"><i class="fa-solid fa-arrow-left"></i> Regresar</a>
+            </div>
+        </div>
+
+    </header>
+    <section>
+        <section class="contenedorIniciarSesion">
+            <div class="contenedorLenCore">
+                <div class="img"><img src="../img/icon.png" alt=""></div>
+                <h1>LenCore</h1>
+                <p>Inicia sesión en tu cuenta</p>
+            </div>
+
+            <div class="contenedorForm">
+
+                <h4>Bienvenido de Nuevo</h4>
+                <p class="subForm">Ingresa tus credenciales para acceder</p>
+
+                <form id="formIniciarSesion">
+
+                    <div class="inputForm">
+                        <p>Cuenta *</p>
+                        <input type="text" placeholder="tu cuenta" name="" id="cuentaInputIS">
+                    </div>
+                    <div class="inputForm">
+                        <p>Contraseña *</p>
+                        <input type="password" placeholder="••••••••••" id="contrasenaInputIS">
+                    </div>
+                    <div class="botonEnviar">
+                        <button class="boton" type="submit">Inicia sesión
+                        </button>
+                    </div>
+
+            </div>
+
+        </section>
+    </section>
+    <script src="../js/iniciarSesion.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+section .contenedorIniciarSesion {
+  max-width: 70%;
+  margin: auto;
+}
+
+.contenedorLenCore {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contenedorLenCore .img img {
+  width: 100px;
+  height: 100px;
+}
+
+.contenedorLenCore h1 {
+  margin: 0.5rem;
+}
+
+.contenedorForm {
+  margin-top: 2rem;
+  background-color: #ffffff;
+  padding: 4rem 2rem;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0rem 0rem 1.75rem #17171720;
+  max-width: 600px;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.contenedorForm h4 {
+  margin-bottom: 0.5rem;
+}
+
+.contenedorForm .subForm {
+  color: #737373;
+}
+
+.contenedorForm form {
+  margin-top: 2rem;
+}
+
+.contenedorForm form .botonEnviar {
+  margin-top: 2rem;
+  display: flex;
+}
+
+.contenedorForm form .botonEnviar button {
+  width: 100%;
+}

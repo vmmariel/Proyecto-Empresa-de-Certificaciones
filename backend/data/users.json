@@ -1,0 +1,8 @@
+[
+    { "cuenta": "Delia",    "contrasena": "1234",   "nomComp": "Delia Ramírez Soto",        "pago": false, "intento":false,    "aprobo": false },
+    { "cuenta": "Eloise",   "contrasena": "abcd",   "nomComp": "Eloise Fernández Cruz",     "pago": false, "intento":false,    "aprobo": false },
+    { "cuenta": "Isabela",  "contrasena": "4567",   "nomComp": "Isabela Torres Mendoza",    "pago": false, "intento":false,    "aprobo": false },
+    { "cuenta": "Luciana",  "contrasena": "efgh",   "nomComp": "Luciana García Lopez",      "pago": false, "intento":false,    "aprobo": false },
+    { "cuenta": "Marian",   "contrasena": "8910",   "nomComp": "Marian Monreal Díaz",       "pago": false, "intento":false,    "aprobo": false },
+    { "cuenta": "Penelope", "contrasena": "ijkl",   "nomComp": "Penelope Castillo Vargas",  "pago": false, "intento":false,    "aprobo": false }
+]
