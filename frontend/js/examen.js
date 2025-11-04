@@ -33,20 +33,57 @@ updateIULoggedIn = (nombre) => {
   document.getElementById("fechaExamen").textContent = fechaFormateada;
 };
 
-document.getElementById("botonCerrar").addEventListener("click", () => {
-  limpiarLocalStorage();
-  updateIULoggedOut();
+llamadaCerrarSesion = async () => {
+  try {
+    const res = await fetch("http://localhost:3000/api/logout", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
 
-  Swal.fire({
-    position: "center",
-    icon: "success",
-    title: "¡Adiós!",
-    text: "Has cerrado sesión correctamente.",
-    showConfirmButton: false,
-    timer: 1500,
-  }).then(() => {
-    window.location.href = "index.html";
-  });
+    if (res.ok) {
+      const data = await res.json();
+
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "¡Adiós!",
+        text: "Has cerrado sesión correctamente.",
+        showConfirmButton: false,
+        timer: 1500,
+      }).then(() => {
+        window.location.href = "index.html";
+      });
+    } else {
+      Swal.fire({
+        title: "Error al cerrar sesión",
+        text: `Ingrese sus credenciales correctamente`,
+        icon: "error",
+      });
+    }
+  } catch (error) {
+    Swal.fire({
+      title: "Error de conexión",
+      text: "Ocurrió un error al conectar con el servidor",
+      icon: "error",
+    });
+  }
+};
+
+document.getElementById("botonCerrar").addEventListener("click", async () => {
+  try {
+    await llamadaCerrarSesion();
+  } catch (error) {
+    Swal.fire({
+      title: "Error de conexión",
+      text: "Ocurrió un error al conectar con el servidor",
+      icon: "error",
+    });
+  } finally {
+    updateIULoggedOut();
+    limpiarLocalStorage();
+  }
 });
 
 updateIULoggedOut = () => {
@@ -288,23 +325,19 @@ enviarFormulario = async (answers) => {
         Swal.fire({
           position: "center",
           icon: "success",
-          title: "¡Examen aprobado!",
+          title: "¡Examen aprobado!" + data.mensaje,
           text: "¡Felicidades! Has aprobado la certificación con una calificacion de: " + data.porcentaje,
           confirmButtonColor: "#171717",
           confirmButtonText: "Descargar Certificado"
-        }).then(() => {
-          if(data.pdfUrl) {
-            window.open(data.pdfUrl, "_blank")
-          }
-
-          window.location.href = "certificaciones.html";
+        }).then(async () => {
+          await generarCertificado()
         });
 
       } else {
         Swal.fire({
           position: "center",
           icon: "error",
-          title: "Examen reprobado",
+          title: "Examen reprobado" + data.mensaje,
           text: "No alcanzaste la puntuación mínima para aprobar. Tu calificación fue de: " + data.porcentaje,
           confirmButtonColor: "#171717",
         }).then(() => {
@@ -329,6 +362,60 @@ enviarFormulario = async (answers) => {
       text: "No se pudo conectar con el servidor. Revisa tu conexión a Internet e inténtalo nuevamente.",
       confirmButtonColor: "#171717",
     });
+  }
+};
+
+generarCertificado = async () => {
+  try {
+    const res = await fetch("http://localhost:3000/api/questions/certificado", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
+
+    let data;
+
+    try {
+      data = await res.json();
+    } catch (error) {
+      data = {};
+    }
+
+    if (res.ok) {
+
+      Swal.fire({
+        icon: "success",
+        title: "¡Certificado generado!",
+        text: "Tu certificado se descargará automáticamente.",
+        showConfirmButton: true,
+        timer: 2000,
+      }).then(() => {
+        window.open(data.pdfUrl, "_blank")
+
+        
+        window.location.href = "certificaciones.html";
+      });
+
+    } else {
+      Swal.fire({
+        position: "top-end",
+        icon: "error",
+        title: "Error al generar el certificado",
+        text: "No se pudo descargar el certificado. Inténtalo de nuevo más tarde.",
+        showConfirmButton: false,
+        timer: 2000,
+      })
+    }
+  } catch (error) {
+    Swal.fire({
+      position: "top-end",
+      icon: "error",
+      title: "Error al generar el certificado",
+      text: "No se pudo descargar el certificado. Inténtalo de nuevo más tarde.",
+      showConfirmButton: false,
+      timer: 2000,
+    })
   }
 };
 

@@ -10,8 +10,9 @@ function generarCertificado({ nombreCompleto, fecha, ciudad }) {
     margin: 50,
   });
 
+  const nombrePdf = `${nombreCompleto.replace(/\s+/g, "_")}_Certificado.pdf`
   // Ruta donde se guardará el PDF generado
-  const outputPath = path.join(__dirname, `../../resources/certificados/${nombreCompleto.replace(/\s+/g, "_")}_Certificado.pdf`);
+  const outputPath = path.join(__dirname, `../../resources/certificados/${nombrePdf}`);
 
   // Crear carpeta si no existe
   const dir = path.dirname(outputPath);
@@ -108,7 +109,7 @@ function generarCertificado({ nombreCompleto, fecha, ciudad }) {
   doc.end();
 
   return new Promise((resolve, reject) => {
-    stream.on("finish", () => resolve(outputPath));
+    stream.on("finish", () => resolve(nombrePdf));
     stream.on("error", reject);
   });
 }

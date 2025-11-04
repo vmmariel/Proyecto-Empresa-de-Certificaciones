@@ -3,6 +3,7 @@ const authRoutes = require("./routes/auth.routes");
 const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 3000;
+const path = require("path")
 
 app.use(express.json());
 
@@ -35,6 +36,10 @@ app.use("/api/payment", paymentRoutes);
 
 const contactoRoutes = require("./routes/contacto.routes");
 app.use("/api", contactoRoutes);
+
+
+// Aquí configuras la carpeta pública
+app.use("/api/descargas", express.static(path.join(__dirname, "resources/certificados")));
 
 app.listen(PORT, () => {
   console.log(`Servidor escuchando en http://localhost:${PORT}`);
